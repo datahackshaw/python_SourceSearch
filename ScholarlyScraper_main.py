@@ -405,20 +405,53 @@ class PaperSearchApp(QWidget):
         header_frame.setObjectName("headerFrame")
         header_layout = QVBoxLayout(header_frame)
         
-        title_label = QLabel("🔬 Academic Paper Explorer")
+        # Main title box
+        title_box = QFrame()
+        title_box.setObjectName("titleBox")
+        title_box_layout = QVBoxLayout(title_box)
+        
+        title_label = QLabel("🔍 Python Academic Search")
         title_label.setAlignment(Qt.AlignCenter)
         title_font = QFont()
-        title_font.setPointSize(24)
+        title_font.setPointSize(28)
         title_font.setBold(True)
         title_label.setFont(title_font)
-        title_label.setStyleSheet("color: white; margin: 20px;")
+        title_label.setStyleSheet("color: #2c3e50; margin: 15px; padding: 10px;")
         
-        subtitle_label = QLabel("Discover research papers from CrossRef and Semantic Scholar")
+        subtitle_label = QLabel("Comprehensive Research Paper Discovery Tool")
         subtitle_label.setAlignment(Qt.AlignCenter)
-        subtitle_label.setStyleSheet("color: #ecf0f1; font-size: 14px; margin-bottom: 20px;")
+        subtitle_font = QFont()
+        subtitle_font.setPointSize(14)
+        subtitle_label.setFont(subtitle_font)
+        subtitle_label.setStyleSheet("color: #7f8c8d; margin-bottom: 10px; font-style: italic;")
         
-        header_layout.addWidget(title_label)
-        header_layout.addWidget(subtitle_label)
+        title_box_layout.addWidget(title_label)
+        title_box_layout.addWidget(subtitle_label)
+        
+        # Attribution box
+        attribution_box = QFrame()
+        attribution_box.setObjectName("attributionBox")
+        attribution_layout = QVBoxLayout(attribution_box)
+        
+        attribution_label = QLabel("Designed by Terminal Technology Tips")
+        attribution_label.setAlignment(Qt.AlignCenter)
+        attribution_font = QFont()
+        attribution_font.setPointSize(12)
+        attribution_label.setFont(attribution_font)
+        attribution_label.setStyleSheet("color: #95a5a6; padding: 8px; font-weight: 300;")
+        
+        features_label = QLabel("🌐 CrossRef & Semantic Scholar Integration • 📊 Interactive Results • 📋 Citation Generator")
+        features_label.setAlignment(Qt.AlignCenter)
+        features_font = QFont()
+        features_font.setPointSize(10)
+        features_label.setFont(features_font)
+        features_label.setStyleSheet("color: #bdc3c7; padding: 5px; font-style: italic;")
+        
+        attribution_layout.addWidget(attribution_label)
+        attribution_layout.addWidget(features_label)
+        
+        header_layout.addWidget(title_box)
+        header_layout.addWidget(attribution_box)
         main_layout.addWidget(header_frame)
 
         # Search section
@@ -513,6 +546,24 @@ class PaperSearchApp(QWidget):
                     stop: 0 #667eea, stop: 1 #764ba2);
                 border-radius: 15px;
                 margin-bottom: 10px;
+                padding: 20px;
+            }
+            
+            #titleBox {
+                background-color: white;
+                border: 2px solid #e9ecef;
+                border-radius: 12px;
+                margin: 10px;
+                padding: 15px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+            
+            #attributionBox {
+                background-color: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-radius: 8px;
+                margin: 10px;
+                padding: 10px;
             }
             
             #searchFrame {
